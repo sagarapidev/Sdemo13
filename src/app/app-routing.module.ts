@@ -6,7 +6,12 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { AddUserComponent } from './components/add-user/add-user.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'user', pathMatch: 'full' },
+  { path: 'user', component: UsersListComponent },
+  { path: 'user/:id', component: UserDetailComponent },
+  { path: 'add', component: AddUserComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
